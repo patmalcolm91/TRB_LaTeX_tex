@@ -1547,7 +1547,7 @@ EXECUTE {initialize.extra.label.stuff}
 ITERATE {forward.pass}
 REVERSE {reverse.pass}
 FUNCTION {bib.sort.order}
-{ sort.label
+{ author.sort
   "    "
   *
   year field.or.null sortify
