@@ -659,7 +659,7 @@ FUNCTION {format.date}
   if$
   extra.label *
   before.all 'output.state :=
-  ", " swap$ *
+  ". " swap$ *
 }
 FUNCTION {format.btitle}
 { title "title" bibinfo.check
@@ -1009,7 +1009,9 @@ FUNCTION {format.organization.address}
 FUNCTION {article}
 { output.bibitem
   format.authors "author" output.check
-  author format.key output
+  new.sentence
+  format.date "year" output.check
+  new.sentence
   format.title "title" output.check
   new.sentence
   crossref missing$
@@ -1019,7 +1021,6 @@ FUNCTION {article}
       emphasize
       "journal" output.check
       format.vol.num output
-      format.date "year" output.check
       format.pages output
     }
     { format.article.crossref output.nonnull
@@ -1133,6 +1134,9 @@ FUNCTION {inproceedings}
 { output.bibitem
   format.authors "author" output.check
   author format.key output
+  new.sentence
+  format.date "year" output.check
+  new.sentence
   format.title "title" output.check
   new.sentence
   crossref missing$
@@ -1143,7 +1147,6 @@ FUNCTION {inproceedings}
           format.publisher.address output
         }
       if$
-      format.date "year" output.check
       format.bvolume output
       format.number.series output
       format.pages output
@@ -1189,11 +1192,13 @@ FUNCTION {misc}
 { output.bibitem
   format.authors output
   author format.key output
+  new.sentence
+  format.date "year" output.check
+  new.sentence
   format.btitle output
   new.sentence
   howpublished "howpublished" bibinfo.check output
   address "address" bibinfo.check output
-  format.date "year" output.check
   format.note output
   fin.entry
 }
