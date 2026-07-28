@@ -1044,6 +1044,9 @@ FUNCTION {book}
       if$
     }
   if$
+  new.sentence
+  format.date "year" output.check
+  new.sentence
   format.btitle "title" output.check
   crossref missing$
     { format.bvolume output
@@ -1057,7 +1060,6 @@ FUNCTION {book}
     }
   if$
   format.edition output
-  format.date "year" output.check
   format.note output
   fin.entry
 }
